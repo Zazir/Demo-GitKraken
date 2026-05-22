@@ -66,3 +66,24 @@ $(document).ready(function() {
        }
        lastScrollTop = st;
    }
+
+   function hasScrolledDown() {
+       var st = $(this).scrollTop();
+
+       // Make sure they scroll more than delta
+       if(Math.abs(lastScrollTop - st) <= delta)
+           return;
+
+       // If they scrolled down and are past the navbar, add class .MagicMenu-up.
+       // This is necessary so you never see what is "behind" the navbar.
+       if (st > lastScrollTop && st > navbarHeight){
+           // Scroll Down
+           $('#MagicMenu').fadeOut(500);
+       } else {
+           // Scroll Up
+           if(st + $(window).height() < $(document).height()) {
+               $('#MagicMenu').fadeIn(500);
+           }
+       }
+       lastScrollTop = st;
+   }
