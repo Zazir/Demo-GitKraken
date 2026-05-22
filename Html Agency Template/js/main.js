@@ -1,3 +1,6 @@
+// Oh look, maybe I fucked up everything
+// Should I be worry about creating collisions?
+
 
 $(document).ready(function() {
 //Off Canvas Menu Slide
